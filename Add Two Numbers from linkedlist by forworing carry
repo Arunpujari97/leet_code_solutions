@@ -1,0 +1,50 @@
+class node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+    
+class linked_list:
+    def __init__(self):
+        self.head=None
+    
+    def create_ll(self,value):
+        new_node=node(value)
+        new_node.next=self.head
+        self.head=new_node
+    def get_input_(self):
+        l1_list=input('enter the numbers with space').split()
+        for i in range(len(l1_list)):
+            self.create_ll(l1_list[int(i)])
+        curr=self.head
+
+    
+    def add_of_linked_list(self):
+        curr1 = l1.head
+        curr2 = l2.head
+        result = linked_list()
+        carry = 0
+        while curr1 is not None or curr2 is not None or carry != 0:
+            val1 = curr1.data if curr1 is not None else 0
+            val2 = curr2.data if curr2 is not None else 0
+            total = int(val1) + int(val2) + carry
+            digit = total % 10
+            carry = total // 10
+            result.create_ll(digit)
+            if curr1 is not None:
+                curr1 = curr1.next
+            if curr2 is not None:
+                curr2 = curr2.next
+        return result
+    def print_ll(self):
+        curr = self.head
+        while curr:
+            print(curr.data, '-->', end='')
+            curr = curr.next
+        print()
+
+l1=linked_list()
+l2=linked_list()
+l1.get_input_()
+l2.get_input_()
+sum_lis=l1.add_of_linked_list()
+sum_lis.print_ll()
