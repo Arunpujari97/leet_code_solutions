@@ -1,0 +1,15 @@
+def substring_find(string1):
+    arr=[]
+    arr2=[]
+    for i in string1:
+        if i not in arr:
+            arr.append(i)
+        else:
+            pos=arr.index(i)
+            arr=arr[pos+1:]
+            arr.append(i)
+        if len(arr)>len(arr2):
+            best=arr.copy()
+    print("".join(best))
+    print(len(best))
+substring_find('abcdbdcadbgs')
