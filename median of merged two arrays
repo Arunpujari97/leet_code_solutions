@@ -1,0 +1,13 @@
+import numpy
+def find_median(first_arr,second_arr):
+    arr1=[]
+    for i in first_arr:
+        arr1.append(int(i))
+    for i in second_arr:
+        arr1.append(int(i))
+    arr2=sorted(arr1)
+    median=numpy.median(sorted(arr2))
+    return median
+first_arr=input('enter the numbers for first').split()
+second_arr=input('enter the numbers for second').split()
+print(find_median(first_arr,second_arr))
