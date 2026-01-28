@@ -1,0 +1,5 @@
+class Solution(object):
+    def isPalindrome(self, x):
+       return x==x[::-1]
+p=Solution()
+print(p.isPalindrome('979'))
